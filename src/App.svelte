@@ -14,6 +14,8 @@
 		TextField,
 		NavigationDrawer,
 		Overlay,
+		Window,
+		WindowItem,
 	} from "svelte-materialify";
 	import {
 		mdiHome,
@@ -26,10 +28,18 @@
 		mdiMagnify,
 		mdiAccount,
 	} from "@mdi/js";
+
+	let window;
 </script>
 
+<svelte:head>
+	<title>Material UI App</title>
+</svelte:head>
 <MaterialApp>
-	<AppBar>
+	<AppBar
+		fixed
+		style="margin-right:16px; width: 100%; width: -webkit-fill-available;width: -webkit-fill-available; width: fill-available;"
+	>
 		<Menu>
 			<div slot="activator">
 				<Button depressed>
@@ -45,12 +55,14 @@
 				</ListItem>
 			</List>
 		</Menu>
-		<TextField dense rounded outlined nolabel label="Search">
-			Search
-			<div slot="append">
-				<Icon path={mdiMagnify} />
-			</div></TextField
-		>
+		<div style="flex-grow:1">
+			<TextField dense rounded outlined>
+				Search
+				<div slot="append">
+					<Icon path={mdiMagnify} />
+				</div></TextField
+			>
+		</div>
 		<div style="flex-grow:0" />
 		<Menu>
 			<div slot="activator">
@@ -73,23 +85,89 @@
 			<ListItem>Item 3</ListItem>
 		</Menu>
 	</AppBar>
-
-	<div class="container">
-		<Row>
-			<!-- Row is a wrapper component for Col -->
-			<Col class="align-self-end">
-				<div class="float-right">
-					<Button fab class="green white-text">
-						<Icon path={mdiLayersTripleOutline} />
-					</Button>
-				</div>
-			</Col>
-		</Row>
+	<div style="position: absolute; top: 0; color: red;">
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
 	</div>
-
+	<Window bind:this={window}>
+		<style>
+			.slide {
+				height: 200px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: #fff;
+			}
+		</style>
+		<WindowItem style="position: absolute; top: 0;">
+			<div class="slide red">
+				<h4>Window Item 1 index={-1}</h4>
+			</div>
+		</WindowItem>
+		<WindowItem>
+			<div class="slide green">
+				<h4>Window Item 2</h4>
+			</div>
+		</WindowItem>
+		<WindowItem>
+			<div class="slide blue">
+				<h4>Window Item 3</h4>
+			</div>
+		</WindowItem>
+	</Window>
+	<Button
+		fab
+		class="green white-text"
+		style="position: fixed; top: 70px; right: 16px;"
+	>
+		<Icon path={mdiLayersTripleOutline} />
+	</Button>
 	<Footer
 		noGutters
-		absolute
+		fixed
 		class="justify-space-between float-right"
 		style="background-color: #0000"
 	>
@@ -102,25 +180,3 @@
 		</Button>
 	</Footer>
 </MaterialApp>
-
-<style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
-</style>
