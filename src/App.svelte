@@ -1,5 +1,5 @@
 <script>
-	import Main from "./Main.svelte";
+	import Vertical from "./Vertical.svelte";
 	import {
 		AppBar,
 		Menu,
@@ -29,13 +29,12 @@
 		mdiMagnify,
 		mdiAccount,
 	} from "@mdi/js";
-
-	let window;
 </script>
 
 <svelte:head>
 	<title>Material UI App</title>
 </svelte:head>
+
 <MaterialApp>
 	<AppBar
 		fixed
@@ -87,34 +86,14 @@
 		</Menu>
 	</AppBar>
 	<div class="container">
-		<Main />
+		<p>1. Content goes here</p>
+		<p>Content goes here</p>
+		<p>Content goes here</p>
+		<p>Content goes here</p>
+		<p>Content goes here</p>
+		<p>Content goes here</p>
+		<p>Content goes here</p>
 	</div>
-	<Window bind:this={window}>
-		<style>
-			.slide {
-				height: 200px;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				color: #fff;
-			}
-		</style>
-		<WindowItem style="position: absolute; top: 0;">
-			<div class="slide red">
-				<h4>Window Item 1 index={-1}</h4>
-			</div>
-		</WindowItem>
-		<WindowItem>
-			<div class="slide green">
-				<h4>Window Item 2</h4>
-			</div>
-		</WindowItem>
-		<WindowItem>
-			<div class="slide blue">
-				<h4>Window Item 3</h4>
-			</div>
-		</WindowItem>
-	</Window>
 	<Button
 		fab
 		class="green white-text"
@@ -140,8 +119,10 @@
 
 <style>
 	.container {
+		padding: 80px 8px 8px 8px;
 		color: darkgreen;
 		background-color: #c8e6c959;
+		overflow-y: hidden;
 		height: 100vh;
 	}
 </style>
