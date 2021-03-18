@@ -40,7 +40,7 @@
 		fixed
 		style="margin-right:0px; width: 100%; width: -webkit-fill-available;width: -webkit-fill-available; width: fill-available;"
 	>
-		<Menu>
+		<Menu hover>
 			<div slot="activator">
 				<Button depressed>
 					<Icon path={mdiMenu} />
@@ -64,7 +64,7 @@
 			>
 		</div>
 		<div style="flex-grow:0" />
-		<Menu>
+		<Menu hover>
 			<div slot="activator">
 				<Button depressed>
 					<Icon path={mdiCardAccountDetailsOutline} />
@@ -74,15 +74,14 @@
 			<ListItem>Keys</ListItem>
 			<ListItem>Logout</ListItem>
 		</Menu>
-		<Menu right>
+		<Menu right hover>
 			<div slot="activator">
 				<Button depressed>
 					<Icon path={mdiDotsVertical} />
 				</Button>
 			</div>
-			<ListItem>Item 1</ListItem>
-			<ListItem>Item 2</ListItem>
-			<ListItem>Item 3</ListItem>
+			<ListItem>Settings</ListItem>
+			<ListItem>Privacy</ListItem>
 		</Menu>
 	</AppBar>
 	<div class="container">
@@ -119,7 +118,7 @@
 
 <style>
 	.container {
-		padding: 80px 8px 8px 8px;
+		padding: 80px 16px 12px 16px;
 		color: darkgreen;
 		background-color: #c8e6c959;
 		overflow-y: hidden;
