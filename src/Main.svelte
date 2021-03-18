@@ -18,12 +18,11 @@
 </script>
 
 <Swiper
-    spaceBetween={100}
-    slidesPerView={1.5}
+    spaceBetween={250}
+    slidesPerView={1.15}
     navigation
     centerInsufficientSlides
     centeredSlides
-    height="100%"
     pagination={{ clickable: true }}
     scrollbar={{ draggable: true }}
     on:slideChange={() => console.log("slide change")}
@@ -94,7 +93,6 @@
             Slide 3 Slide 3 Slide 3 Slide 3 Slide 3 Slide 3 Slide 3
         </div>
     </SwiperSlide>
-    <SwiperSlide>Slide 4</SwiperSlide>
     <!-- <span slot="container-start">Container Start</span>
     <span slot="container-end">Container End</span>
     <span slot="wrapper-start">Wrapper Start</span>
@@ -103,8 +101,7 @@
 
 <style>
     .slide {
-        /* width: 60vw; */
-        height: 80vh;
+        height: 90vh;
         color: darkcyan;
     }
 </style>
