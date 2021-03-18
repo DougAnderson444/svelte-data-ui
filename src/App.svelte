@@ -36,7 +36,7 @@
 	} from "@mdi/js";
 	let createActive, layersActive;
 	let filters = [];
-	// $: if (filters) console.log({ filters });
+	$: if (filters) console.log({ filters });
 </script>
 
 <svelte:head>
@@ -116,21 +116,21 @@
 				<Divider />
 				<Subheader>Filters</Subheader>
 				<ListItemGroup multiple bind:value={filters}>
-					<ListItem>
+					<ListItem value="Notifications">
 						<span slot="prepend">
 							<Checkbox
-								bind:group={filters}
 								value="Notifications"
-								checked={filters.includes("Notifications")}
+								group={filters}
+								checked={filters.includes(0)}
 							/>
 						</span>
 						Notifications
 						<span slot="subtitle"> Allow Notifications </span>
 					</ListItem>
-					<ListItem>
+					<ListItem value="Sound">
 						<span slot="prepend">
 							<Checkbox
-								bind:group={filters}
+								group={filters}
 								value="Sound"
 								checked={filters.includes("Sound")}
 							/>
@@ -138,10 +138,10 @@
 						Sound
 						<span slot="subtitle"> Hangouts sound. </span>
 					</ListItem>
-					<ListItem>
+					<ListItem value="Invites">
 						<span slot="prepend">
 							<Checkbox
-								bind:group={filters}
+								group={filters}
 								value="Invites"
 								checked={filters.includes("Invites")}
 							/>
