@@ -1,5 +1,6 @@
 <script>
 	import Vertical from "./Vertical.svelte";
+	import Dialog from "./Dialog.svelte";
 	import {
 		AppBar,
 		Menu,
@@ -29,6 +30,7 @@
 		mdiMagnify,
 		mdiAccount,
 	} from "@mdi/js";
+	let createActive, layersActive;
 </script>
 
 <svelte:head>
@@ -80,8 +82,10 @@
 					<Icon path={mdiDotsVertical} />
 				</Button>
 			</div>
-			<ListItem>Settings</ListItem>
-			<ListItem>Privacy</ListItem>
+			<List>
+				<ListItem>Settings</ListItem>
+				<ListItem>Privacy</ListItem>
+			</List>
 		</Menu>
 	</AppBar>
 	<div class="container">
@@ -93,13 +97,19 @@
 		<p>Content goes here</p>
 		<p>Content goes here</p>
 	</div>
-	<Button
-		fab
-		class="green white-text"
-		style="position: fixed; top: 70px; right: 16px;"
-	>
-		<Icon path={mdiLayersTripleOutline} />
-	</Button>
+	<div style="position: fixed; top: 70px; right: 16px;">
+		<Menu hover right>
+			<div slot="activator">
+				<Button fab class="green white-text">
+					<Icon path={mdiLayersTripleOutline} />
+				</Button>
+			</div>
+			<List>
+				<ListItem>Select visible data.</ListItem>
+				<ListItem>Select visible data.</ListItem>
+			</List>
+		</Menu>
+	</div>
 	<Footer
 		noGutters
 		fixed
@@ -110,9 +120,16 @@
 			<Icon path={mdiHome} />
 		</Button>
 
-		<Button fab class="green white-text">
+		<Button
+			fab
+			class="green white-text"
+			on:click={() => (createActive = true)}
+		>
 			<Icon path={mdiPlusThick} />
 		</Button>
+		<Dialog bind:active={createActive}
+			>Add something to your profile!</Dialog
+		>
 	</Footer>
 </MaterialApp>
 
