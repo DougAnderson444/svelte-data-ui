@@ -1,4 +1,5 @@
 <script>
+	import Main from "./Main.svelte";
 	import {
 		AppBar,
 		Menu,
@@ -38,7 +39,7 @@
 <MaterialApp>
 	<AppBar
 		fixed
-		style="margin-right:16px; width: 100%; width: -webkit-fill-available;width: -webkit-fill-available; width: fill-available;"
+		style="margin-right:0px; width: 100%; width: -webkit-fill-available;width: -webkit-fill-available; width: fill-available;"
 	>
 		<Menu>
 			<div slot="activator">
@@ -85,52 +86,8 @@
 			<ListItem>Item 3</ListItem>
 		</Menu>
 	</AppBar>
-	<div style="position: absolute; top: 0; color: red;">
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
-		Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div Div
+	<div class="container">
+		<Main />
 	</div>
 	<Window bind:this={window}>
 		<style>
@@ -180,3 +137,11 @@
 		</Button>
 	</Footer>
 </MaterialApp>
+
+<style>
+	.container {
+		color: darkgreen;
+		background-color: #c8e6c959;
+		height: 100vh;
+	}
+</style>
