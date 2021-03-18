@@ -18,6 +18,10 @@
 		Overlay,
 		Window,
 		WindowItem,
+		Subheader,
+		ListItemGroup,
+		Checkbox,
+		Divider,
 	} from "svelte-materialify";
 	import {
 		mdiHome,
@@ -31,6 +35,8 @@
 		mdiAccount,
 	} from "@mdi/js";
 	let createActive, layersActive;
+	let filters = [];
+	// $: if (filters) console.log({ filters });
 </script>
 
 <svelte:head>
@@ -98,15 +104,52 @@
 		<p>Content goes here</p>
 	</div>
 	<div style="position: fixed; top: 70px; right: 16px;">
-		<Menu hover right>
+		<Menu right closeOnClick={false} hover>
 			<div slot="activator">
 				<Button fab class="green white-text">
 					<Icon path={mdiLayersTripleOutline} />
 				</Button>
 			</div>
-			<List>
-				<ListItem>Select visible data.</ListItem>
-				<ListItem>Select visible data.</ListItem>
+			<List class="elevation-2" style="width:300px;">
+				<Subheader>Alerts</Subheader>
+				<ListItem selectable>Notifications</ListItem>
+				<Divider />
+				<Subheader>Filters</Subheader>
+				<ListItemGroup multiple bind:value={filters}>
+					<ListItem>
+						<span slot="prepend">
+							<Checkbox
+								bind:group={filters}
+								value="Notifications"
+								checked={filters.includes("Notifications")}
+							/>
+						</span>
+						Notifications
+						<span slot="subtitle"> Allow Notifications </span>
+					</ListItem>
+					<ListItem>
+						<span slot="prepend">
+							<Checkbox
+								bind:group={filters}
+								value="Sound"
+								checked={filters.includes("Sound")}
+							/>
+						</span>
+						Sound
+						<span slot="subtitle"> Hangouts sound. </span>
+					</ListItem>
+					<ListItem>
+						<span slot="prepend">
+							<Checkbox
+								bind:group={filters}
+								value="Invites"
+								checked={filters.includes("Invites")}
+							/>
+						</span>
+						Invites
+						<span slot="subtitle"> Notify when invited. </span>
+					</ListItem>
+				</ListItemGroup>
 			</List>
 		</Menu>
 	</div>
