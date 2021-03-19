@@ -119,9 +119,8 @@
 					<ListItem value="Notifications">
 						<span slot="prepend">
 							<Checkbox
-								value="Notifications"
 								group={filters}
-								checked={filters.includes(0)}
+								checked={filters.includes("Notifications")}
 							/>
 						</span>
 						Notifications
@@ -131,8 +130,7 @@
 						<span slot="prepend">
 							<Checkbox
 								group={filters}
-								value="Sound"
-								checked={filters.includes("Sound")}
+								checked={!filters.includes("Sound")}
 							/>
 						</span>
 						Sound
@@ -142,7 +140,6 @@
 						<span slot="prepend">
 							<Checkbox
 								group={filters}
-								value="Invites"
 								checked={filters.includes("Invites")}
 							/>
 						</span>
