@@ -14,7 +14,7 @@
 		ListItemGroup,
 		Checkbox,
 		Divider,
-	} from "svelte-materialify";
+	} from "svelte-materialify/src";
 	import {
 		mdiHome,
 		mdiPlusThick,
@@ -24,6 +24,10 @@
 		mdiDotsVertical,
 		mdiMagnify,
 	} from "@mdi/js";
+
+	// Props
+	export let createItems = [{ text: "Data" }, { text: "New Contact" }];
+
 	let createActive;
 	let filters = [];
 	$: if (filters) console.log({ filters });
@@ -86,7 +90,7 @@
 	</AppBar>
 	<div class="container">
 		<slot>
-			<p>Content goes here</p>
+			<h1>Content goes here</h1>
 			<p>Content goes here</p>
 			<p>Content goes here</p>
 			<p>Content goes here</p>
@@ -158,18 +162,33 @@
 		>
 			<Icon path={mdiPlusThick} />
 		</Button>
-		<Dialog bind:active={createActive}
-			>Add something to your profile!</Dialog
-		>
+		<Dialog bind:active={createActive}>
+			<List>
+				<Subheader><h4 class="text-h6">Add:</h4></Subheader>
+				<Divider />
+				<ListItemGroup>
+					{#each createItems as item}
+						<ListItem>
+							<span slot="prepend">
+								{#if item.icon}
+									<Icon path={item.icon} />
+								{/if}
+							</span>
+							{item.text}
+						</ListItem>
+					{/each}
+				</ListItemGroup>
+			</List>
+		</Dialog>
 	</Footer>
 </MaterialApp>
 
-<style>
+<style lang="scss" global>
+	@import "svelte-materialify/src/styles/variables";
 	.container {
 		padding: 80px 16px 12px 16px;
-		color: darkgreen;
-		background-color: #c8e6c959;
 		overflow-y: hidden;
 		height: 100vh;
+		color: $primary-color;
 	}
 </style>

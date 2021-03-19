@@ -1,5 +1,5 @@
 <script>
-  import { Dialog } from "svelte-materialify";
+  import { Dialog } from "svelte-materialify/src";
 
   export let active = false;
 </script>
