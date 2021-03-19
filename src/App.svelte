@@ -1,12 +1,8 @@
 <script>
-	import Vertical from "./Vertical.svelte";
 	import Dialog from "./Dialog.svelte";
 	import {
 		AppBar,
 		Menu,
-		Container,
-		Row,
-		Col,
 		MaterialApp,
 		Button,
 		Icon,
@@ -14,10 +10,6 @@
 		List,
 		ListItem,
 		TextField,
-		NavigationDrawer,
-		Overlay,
-		Window,
-		WindowItem,
 		Subheader,
 		ListItemGroup,
 		Checkbox,
@@ -27,14 +19,12 @@
 		mdiHome,
 		mdiPlusThick,
 		mdiCardAccountDetailsOutline,
-		mdiCloud,
 		mdiLayersTripleOutline,
 		mdiMenu,
 		mdiDotsVertical,
 		mdiMagnify,
-		mdiAccount,
 	} from "@mdi/js";
-	let createActive, layersActive;
+	let createActive;
 	let filters = [];
 	$: if (filters) console.log({ filters });
 </script>
@@ -95,13 +85,15 @@
 		</Menu>
 	</AppBar>
 	<div class="container">
-		<p>1. Content goes here</p>
-		<p>Content goes here</p>
-		<p>Content goes here</p>
-		<p>Content goes here</p>
-		<p>Content goes here</p>
-		<p>Content goes here</p>
-		<p>Content goes here</p>
+		<slot>
+			<p>Content goes here</p>
+			<p>Content goes here</p>
+			<p>Content goes here</p>
+			<p>Content goes here</p>
+			<p>Content goes here</p>
+			<p>Content goes here</p>
+			<p>Content goes here</p>
+		</slot>
 	</div>
 	<div style="position: fixed; top: 70px; right: 16px;">
 		<Menu right closeOnClick={false} hover>
@@ -151,7 +143,6 @@
 		</Menu>
 	</div>
 	<Footer
-		noGutters
 		fixed
 		class="justify-space-between float-right"
 		style="background-color: #0000"
