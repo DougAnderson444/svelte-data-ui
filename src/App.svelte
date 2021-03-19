@@ -130,7 +130,7 @@
 						<span slot="prepend">
 							<Checkbox
 								group={filters}
-								checked={!filters.includes("Sound")}
+								checked={filters.includes("Sound")}
 							/>
 						</span>
 						Sound
