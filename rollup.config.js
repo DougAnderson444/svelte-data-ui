@@ -58,28 +58,28 @@ export default [
   /**
    * Component Export
    */
-  {
-    input: 'src/index.js',
-    output: [
-      {
-        dir: 'dist/es',
-        format: 'es'
-      },
-      {
-        dir: 'dist/umd',
-        format: 'umd',
-        name,
-        inlineDynamicImports: true
-      }
-    ],
-    plugins: [
-      svelte({
-        preprocess,
-        emitCss: false // should budle css into js,
-      }),
-      nodeResolve()
-    ]
-  },
+  // {
+  //   input: 'src/index.js',
+  //   output: [
+  //     {
+  //       dir: pkg.module,
+  //       format: 'es'
+  //     },
+  //     {
+  //       dir: pkg.main,
+  //       format: 'umd',
+  //       name,
+  //       inlineDynamicImports: true
+  //     }
+  //   ],
+  //   plugins: [
+  //     svelte({
+  //       preprocess,
+  //       emitCss: false // should budle css into js,
+  //     }),
+  //     nodeResolve()
+  //   ]
+  // },
   /**
    * Application Bundle
    */
