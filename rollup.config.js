@@ -73,6 +73,7 @@ export default [
   //     }
   //   ],
   //   plugins: [
+  //      json(),
   //     svelte({
   //       preprocess,
   //       emitCss: false // should budle css into js,

@@ -1,7 +1,8 @@
 {
   "name": "svelte-data-ui-demo",
   "version": "1.0.0",
-  "private": true,
+  "module": "dist/index.mjs",
+  "main": "dist/index.js",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
